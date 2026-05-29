@@ -4,7 +4,7 @@ import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
 import { FaGithub, FaInstagram, FaHardHat, FaEnvelope, FaCode, FaBookOpen, FaLaptopCode, FaUserShield, FaPlug,
   FaDatabase, FaServer, FaCloud, FaGasPump, FaShieldAlt, FaLock, FaChevronDown, 
   FaLinkedinIn,
-  FaTelegram} from 'react-icons/fa';
+  FaTelegram, FaRobot, FaRoute, FaEnvelopeOpenText} from 'react-icons/fa';
 import { SiEthereum, SiReact, SiNextdotjs, SiTypescript, SiMongodb, SiDocker, SiSolidity, SiGraphql, 
   SiEthers, SiWeb3Dotjs, SiThirdweb, SiHtml5, SiCss3, SiTailwindcss, SiNodedotjs } from 'react-icons/si';
 import SkillCard from '../components/SkillCard';
@@ -21,11 +21,7 @@ declare global {
 }
 
 const ProfilePhoto = [
-  '/profile/Profile (1).jpeg',
   '/profile/Profile (2).jpeg',
-  '/profile/Profile (3).jpeg',
-  '/profile/Profile (4).jpeg',
-  '/profile/Profile (5).jpeg',
   '/profile/Profile (6).jpeg',
 ]
 
@@ -193,7 +189,7 @@ const Home: React.FC = () => {
                   Faisal Alfarizi
                 </h1>
                 <h2 className="text-xl md:text-2xl mt-3 text-neutral-200 font-light">
-                  Blockchain & Web3 Specialist | Full-Stack Developer
+                  Full-Stack Web3 Specialist | AI Engineer & Automation Architect
                 </h2>
                 <div className="flex items-center gap-3 mt-3 text-neutral-400">
                   <span className="flex items-center gap-1">
@@ -236,9 +232,9 @@ const Home: React.FC = () => {
                 <div className="lg:col-span-2">
                   <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                     <div className="section-icon rotate-on-hover">
-                      <SiEthereum />
+                      <FaRobot />
                     </div>
-                    <span>Driving Innovation with Blockchain & Web3 Solutions</span>
+                    <span>Building the Bridge Between Web3 and Agentic AI</span>
                   </h3>
                   <motion.p 
                     className="text-neutral-300 leading-relaxed mb-4"
@@ -246,7 +242,7 @@ const Home: React.FC = () => {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5, duration: 0.8 }}
                   >
-                    As a dedicated <span className="text-highlight font-medium">Web3 Developer and Blockchain Enthusiast</span>, I specialize in crafting <span className="text-highlight font-medium">Smart Contracts, Tokens, NFTs,</span> and a variety of <span className="text-highlight font-medium">Decentralized Applications (dApps)</span>. My project experience includes <span className="text-highlight font-medium">DEX AMMs, Oracle Integrations, NFT Marketplaces, and Lending Protocols</span>.
+                    I am a <span className="text-highlight font-medium">Full-Stack Web3 Specialist and AI Agent Architect</span> focused on deploying robust blockchain infrastructure and building <span className="text-highlight font-medium">autonomous AI agents for business automation</span>. My work bridges decentralized protocols with intelligent, agentic systems that can assess leads, generate reports, and support real business workflows.
                   </motion.p>
                   <motion.p 
                     className="text-neutral-300 leading-relaxed mb-6"
@@ -254,7 +250,7 @@ const Home: React.FC = () => {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.7, duration: 0.8 }}
                   >
-                    My journey into blockchain, beginning with active market participation and testnet involvement, has equipped me with deep conceptual understanding and practical insights. I am committed to leveraging this technology to build robust and innovative decentralized solutions.
+                    My current focus combines production Web3 applications with LLM-powered automation: from GannetX and Veloprome to BinaHub's AI assistant and assessment workflows, plus NGN, an MVP news portal designed for automated AI-assisted publishing.
                   </motion.p>
 
                   <motion.div 
@@ -468,7 +464,55 @@ const Home: React.FC = () => {
                   ]}
                 />
               </motion.div>
-              <motion.div className="lg:col-start-2" variants={item}>
+              <motion.div variants={item}>
+                <SkillCard
+                  icon={<FaRobot className="skill-icon" />}
+                  title="AI Engine & Integration"
+                  skills={[
+                    <div key="llm-routing" className="flex items-center gap-1">
+                      <FaRoute className="skill-icon" />
+                      <span>OpenRouter / 9Router model routing</span>
+                    </div>,
+                    <div key="agent-framework" className="flex items-center gap-1">
+                      <FaRobot className="skill-icon" />
+                      <span>Custom AI agent framework logic</span>
+                    </div>,
+                    <div key="sales-workflow" className="flex items-center gap-1">
+                      <FaPlug className="skill-icon" />
+                      <span>Agentic sales workflows with Openclaw</span>
+                    </div>,
+                    <div key="proposal" className="flex items-center gap-1">
+                      <FaCode className="skill-icon" />
+                      <span>AI assessment and proposal generation</span>
+                    </div>
+                  ]}
+                />
+              </motion.div>
+              <motion.div variants={item}>
+                <SkillCard
+                  icon={<FaEnvelopeOpenText className="skill-icon" />}
+                  title="Automation Stack"
+                  skills={[
+                    <div key="resend" className="flex items-center gap-1">
+                      <FaEnvelopeOpenText className="skill-icon" />
+                      <span>Resend for emails and reporting</span>
+                    </div>,
+                    <div key="reporting" className="flex items-center gap-1">
+                      <FaServer className="skill-icon" />
+                      <span>Automated business reporting workflows</span>
+                    </div>,
+                    <div key="composio" className="flex items-center gap-1">
+                      <FaPlug className="skill-icon" />
+                      <span>Composio integration roadmap</span>
+                    </div>,
+                    <div key="lead-generation" className="flex items-center gap-1">
+                      <FaUserShield className="skill-icon" />
+                      <span>AI lead generation roadmap</span>
+                    </div>
+                  ]}
+                />
+              </motion.div>
+              <motion.div variants={item}>
                 <SkillCard
                   icon={<FaCode className="skill-icon" />}
                   title="Security & Best Practices"
@@ -513,24 +557,26 @@ const Home: React.FC = () => {
               <motion.div variants={item}>
                 <ExperienceCard
                   title="Independent Web3 Developer & Project Lead"
-                  period="2024 – Present"
-                  description="Focused on developing Web3 applications through personal projects and hands-on experiments."
+                  period="2024 - Present"
+                  description="Focused on building production Web3 applications and AI-powered automation systems through live products, client-facing tools, and rapid product experiments."
                   achievements={[
                     "Successfully designed, developed, and deployed multiple smart contracts on EVM-compatible.",
                     "Engineered and integrated responsive frontend interfaces for dApps using Next.js, Ethers.js, and TypeScript, ensuring seamless user interaction with smart contracts.",
-                    "Utilized Hardhat as a framework for smart contract development and testing."
+                    "Pioneered the development of autonomous AI agents for business automation, integrating LLMs via OpenRouter and orchestrating workflow triggers for real-time business reporting.",
+                    "Developed AI-driven assessment systems that automate lead analysis, report delivery via email, and business proposal generation for active product development."
                   ]}
                 />
               </motion.div>
               <motion.div variants={item}>
                 <ExperienceCard
                   title="Blockchain Exploration & Foundational Learning"
-                  period="2017 – Present"
+                  period="2017 - Present"
                   description="Deepened understanding of blockchain technology through active participation in the crypto ecosystem, including trading (DEX/CEX), testnet contributions, and node management. This period laid the groundwork for practical Web3 development."
                   achievements={[
                     "Gained practical experience with DeFi protocols and tokenomics through active trading and yield farming on various platforms.",
                     "Contributed to multiple testnet projects, providing feedback and identifying potential issues, which enhanced understanding of dApp lifecycles.",
-                    "Successfully set up and maintained nodes for different blockchain networks, contributing to network decentralization and stability."
+                    "Successfully set up and maintained nodes for different blockchain networks, contributing to network decentralization and stability.",
+                    "Leveraged deep analytical and technical foundations to bridge blockchain infrastructure with modern AI-driven solutions."
                   ]}
                 />
               </motion.div>
@@ -556,34 +602,54 @@ const Home: React.FC = () => {
             <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" variants={container}>
               <motion.div variants={item} whileHover={{ scale: 1.03 }} transition={{ type: "spring", stiffness: 300 }}>
                 <ProjectCard
-                  title="MultiChainGM"
-                  description="MultiChainGM is an advanced MultiChain platform that transforms blockchain interactions through innovative daily engagement protocols ensuring secure and seamless user experiences."
-                  repoLink="https://github.com/faisalfarizi22/MultiChainGM"
-                  demoLink="https://app.multichaingm.com"
+                  title="GannetX"
+                  status="Live"
+                  description="The Multi-Chain Utility Portal. Track GMs, chat on-chain, and deploy smart contracts with zero code."
+                  demoLink="https://gannetx.space"
+                  tags={['Live Product', 'Web3', 'Full-Stack']}
                 />
               </motion.div>
               <motion.div variants={item} whileHover={{ scale: 1.03 }} transition={{ type: "spring", stiffness: 300 }}>
                 <ProjectCard
-                  title="GmTea"
-                  description="GMTea is an advanced on-chain platform that transforms blockchain interactions through innovative daily engagement protocols ensuring secure and seamless user experiences."
-                  repoLink="https://github.com/faisalfarizi22/gmTea.github.io"
-                  demoLink="https://gmtea.multichaingm.com"
+                  title="Veloprome"
+                  status="Live"
+                  description="A prompt bank platform for collecting, organizing, and reusing high-value AI prompts across business, development, and automation workflows."
+                  demoLink="https://veloprome.com"
+                  tags={['Prompt Bank', 'AI Workflow', 'Live Product']}
                 />
               </motion.div>
               <motion.div variants={item} whileHover={{ scale: 1.03 }} transition={{ type: "spring", stiffness: 300 }}>
                 <ProjectCard
-                  title="NeoL"
-                  description="Earn rewards for community engagement by completing daily tasks and climbing the leaderboard within the Neo community. Users must mint NFT NeoL to participate in daily check-ins and tasks, and they can share referral links to instantly earn rewards."
-                  repoLink="https://github.com/faisalfarizi22/NeoL"
-                  demoLink="https://neo-l.vercel.app"
+                  title="WUUS"
+                  status="Live"
+                  description="A business-facing web platform built to help companies establish stronger digital presence, with a roadmap toward AI-enabled sales and automation workflows."
+                  demoLink="https://webuntukusaha.com"
+                  tags={['Business Platform', 'Full-Stack', 'Automation']}
                 />
               </motion.div>
               <motion.div variants={item} whileHover={{ scale: 1.03 }} transition={{ type: "spring", stiffness: 300 }}>
                 <ProjectCard
-                  title="Oracle Integration"
-                  description="A project integrating off-chain data into smart contracts, enabling real-world applications through reliable data feeds."
-                  repoLink="https://github.com/faisalfarizi22/Oracle-Integration"
-                  demoLink="https://oracle-integration.vercel.app"
+                  title="AI Website Builder (Beta)"
+                  status="Beta"
+                  description="A builder platform for WebUntukUsaha that is planned to connect with Veloprome, enabling a more integrated product flow for business creation and automation."
+                  demoLink="https://build.webuntukusaha.com"
+                  tags={['Beta', 'AI Builder', 'Integration']}
+                />
+              </motion.div>
+              <motion.div variants={item} whileHover={{ scale: 1.03 }} transition={{ type: "spring", stiffness: 300 }}>
+                <ProjectCard
+                  title="BinaHub"
+                  status="In Progress"
+                  description="An AI-powered business platform currently developing AI assistant agents, automated assessments, email-based reporting, and self-generating proposal workflows."
+                  tags={['AI Agent', 'Assessment', 'Automation']}
+                />
+              </motion.div>
+              <motion.div variants={item} whileHover={{ scale: 1.03 }} transition={{ type: "spring", stiffness: 300 }}>
+                <ProjectCard
+                  title="NGN - Nice Good News"
+                  status="In Progress"
+                  description="A news portal MVP designed for automated AI-assisted news generation and publishing, with a roadmap toward scalable editorial automation."
+                  tags={['Gen AI', 'News Automation', 'MVP']}
                 />
               </motion.div>
             </motion.div>
@@ -613,7 +679,7 @@ const Home: React.FC = () => {
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              I am a <span className="text-highlight font-medium">proactive and self-motivated developer</span> with a passion for continuous learning, particularly in the dynamic fields of blockchain and Web3. My approach involves <span className="text-highlight font-medium">hands-on project development and in-depth independent research</span> to master new technologies and solve real-world challenges. This dedication to self-improvement has enabled me to build a robust technical foundation and deliver innovative solutions, as demonstrated in my portfolio. I thrive on exploring cutting-edge technologies and applying them to create impactful decentralized applications.
+              I am a <span className="text-highlight font-medium">proactive and self-motivated builder</span> with a strong focus on the intersection of <span className="text-highlight font-medium">Web3, full-stack product development, and AI automation</span>. My learning process is driven by shipping real products, hardcoding custom agent logic, and turning new technical concepts into useful business workflows. I thrive on building systems that connect decentralized infrastructure with intelligent agents capable of assessment, reporting, lead generation, and automated proposal creation.
             </motion.div>
           </div>
         </motion.section>

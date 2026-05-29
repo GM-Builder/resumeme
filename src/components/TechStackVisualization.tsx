@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import type { IconType } from 'react-icons';
 import { 
   SiSolidity, SiEthereum, SiWeb3Dotjs, SiEthers, SiReact, 
   SiNextdotjs, SiTypescript, SiJavascript, SiNodedotjs, SiExpress, 
@@ -11,7 +12,7 @@ interface TechStack {
   id: string;
   name: string;
   category: 'blockchain' | 'frontend' | 'backend' | 'infrastructure';
-  icon: React.ReactNode;
+  icon: IconType;
   proficiency: number; // 1-5
   description: string;
   color: string;
@@ -22,7 +23,7 @@ const techStackData: TechStack[] = [
     id: 'solidity',
     name: 'Solidity',
     category: 'blockchain',
-    icon: <SiSolidity />,
+    icon: SiSolidity,
     proficiency: 5,
     description: 'Smart contract development language for Ethereum and EVM-compatible chains',
     color: 'text-blue-400'
@@ -31,7 +32,7 @@ const techStackData: TechStack[] = [
     id: 'ethers',
     name: 'Ethers.js',
     category: 'blockchain',
-    icon: <SiEthers />,
+    icon: SiEthers,
     proficiency: 4,
     description: 'Library for interacting with the Ethereum blockchain and its ecosystem',
     color: 'text-purple-400'
@@ -40,7 +41,7 @@ const techStackData: TechStack[] = [
     id: 'web3',
     name: 'Web3.js',
     category: 'blockchain',
-    icon: <SiWeb3Dotjs />,
+    icon: SiWeb3Dotjs,
     proficiency: 4,
     description: 'Collection of libraries that allow interaction with Ethereum nodes',
     color: 'text-orange-400'
@@ -49,7 +50,7 @@ const techStackData: TechStack[] = [
     id: 'hardhat',
     name: 'Hardhat',
     category: 'blockchain',
-    icon: <FaHardHat />,
+    icon: FaHardHat,
     proficiency: 5,
     description: 'Development environment for Ethereum software, including debugging, testing, and deployment',
     color: 'text-yellow-400'
@@ -58,7 +59,7 @@ const techStackData: TechStack[] = [
     id: 'ethereum',
     name: 'Ethereum',
     category: 'blockchain',
-    icon: <SiEthereum />,
+    icon: SiEthereum,
     proficiency: 5,
     description: 'Blockchain platform with smart contract functionality',
     color: 'text-teal-400'
@@ -67,7 +68,7 @@ const techStackData: TechStack[] = [
     id: 'ipfs',
     name: 'IPFS',
     category: 'blockchain',
-    icon: <SiIpfs />,
+    icon: SiIpfs,
     proficiency: 3,
     description: 'Distributed system for storing and accessing files, websites, applications, and data',
     color: 'text-cyan-400'
@@ -77,7 +78,7 @@ const techStackData: TechStack[] = [
     id: 'react',
     name: 'React',
     category: 'frontend',
-    icon: <SiReact />,
+    icon: SiReact,
     proficiency: 5,
     description: 'JavaScript library for building user interfaces',
     color: 'text-blue-400'
@@ -86,7 +87,7 @@ const techStackData: TechStack[] = [
     id: 'nextjs',
     name: 'Next.js',
     category: 'frontend',
-    icon: <SiNextdotjs />,
+    icon: SiNextdotjs,
     proficiency: 4,
     description: 'React framework for production that enables server-side rendering and static site generation',
     color: 'text-neutral-300'
@@ -95,7 +96,7 @@ const techStackData: TechStack[] = [
     id: 'typescript',
     name: 'TypeScript',
     category: 'frontend',
-    icon: <SiTypescript />,
+    icon: SiTypescript,
     proficiency: 4,
     description: 'Strongly typed programming language that builds on JavaScript',
     color: 'text-blue-500'
@@ -104,7 +105,7 @@ const techStackData: TechStack[] = [
     id: 'javascript',
     name: 'JavaScript',
     category: 'frontend',
-    icon: <SiJavascript />,
+    icon: SiJavascript,
     proficiency: 5,
     description: 'High-level programming language for web development',
     color: 'text-yellow-400'
@@ -113,7 +114,7 @@ const techStackData: TechStack[] = [
     id: 'tailwind',
     name: 'TailwindCSS',
     category: 'frontend',
-    icon: <SiTailwindcss />,
+    icon: SiTailwindcss,
     proficiency: 4,
     description: 'Utility-first CSS framework for rapid UI development',
     color: 'text-teal-400'
@@ -123,7 +124,7 @@ const techStackData: TechStack[] = [
     id: 'nodejs',
     name: 'Node.js',
     category: 'backend',
-    icon: <SiNodedotjs />,
+    icon: SiNodedotjs,
     proficiency: 4,
     description: 'JavaScript runtime built on Chrome\'s V8 JavaScript engine',
     color: 'text-green-500'
@@ -132,7 +133,7 @@ const techStackData: TechStack[] = [
     id: 'express',
     name: 'Express',
     category: 'backend',
-    icon: <SiExpress />,
+    icon: SiExpress,
     proficiency: 4,
     description: 'Web application framework for Node.js',
     color: 'text-neutral-400'
@@ -141,7 +142,7 @@ const techStackData: TechStack[] = [
     id: 'mongodb',
     name: 'MongoDB',
     category: 'backend',
-    icon: <SiMongodb />,
+    icon: SiMongodb,
     proficiency: 3,
     description: 'NoSQL database program that uses JSON-like documents',
     color: 'text-green-500'
@@ -150,7 +151,7 @@ const techStackData: TechStack[] = [
     id: 'graphql',
     name: 'GraphQL',
     category: 'backend',
-    icon: <SiGraphql />,
+    icon: SiGraphql,
     proficiency: 3,
     description: 'Query language for APIs and a runtime for executing those queries',
     color: 'text-pink-500'
@@ -160,7 +161,7 @@ const techStackData: TechStack[] = [
     id: 'git',
     name: 'Git',
     category: 'infrastructure',
-    icon: <SiGit />,
+    icon: SiGit,
     proficiency: 4,
     description: 'Distributed version control system',
     color: 'text-orange-500'
@@ -169,7 +170,7 @@ const techStackData: TechStack[] = [
     id: 'docker',
     name: 'Docker',
     category: 'infrastructure',
-    icon: <SiDocker />,
+    icon: SiDocker,
     proficiency: 3,
     description: 'Platform for developing, shipping, and running applications in containers',
     color: 'text-blue-500'
@@ -313,30 +314,30 @@ const TechStackVisualization: React.FC = () => {
         >
           {filteredTechStack.map((tech) => (
             <motion.div
-              key={tech.id}
-              className={`glass-panel p-4 rounded-xl flex flex-col items-center text-center cursor-pointer hover-glow bg-gradient-to-br ${categoryColors[tech.category]}`}
-              variants={itemVariants}
-              initial="hidden" 
-              animate="visible"
-              whileHover={{ y: -5, scale: 1.02 }}
-              onClick={() => setSelectedTech(tech)}
-              layout 
-            >
-              <div className={`text-4xl mb-3 ${tech.color}`}>
-                {tech.icon}
-              </div>
-              <h4 className="font-bold text-white">{tech.name}</h4>
-              <div className="mt-2 flex">
-                {[...Array(5)].map((_, i) => (
-                  <div 
-                    key={i} 
-                    className={`w-2 h-2 rounded-full mx-0.5 ${
-                      i < tech.proficiency ? tech.color : 'bg-neutral-700'
-                    }`}
-                  />
-                ))}
-              </div>
-            </motion.div>
+                key={tech.id}
+                className={`glass-panel p-4 rounded-xl flex flex-col items-center text-center cursor-pointer hover-glow bg-gradient-to-br ${categoryColors[tech.category]}`}
+                variants={itemVariants}
+                initial="hidden" 
+                animate="visible"
+                whileHover={{ y: -5, scale: 1.02 }}
+                onClick={() => setSelectedTech(tech)}
+                layout 
+              >
+                <div className={`text-4xl mb-3 ${tech.color}`}>
+                  {React.createElement(tech.icon)}
+                </div>
+                <h4 className="font-bold text-white">{tech.name}</h4>
+                <div className="mt-2 flex">
+                  {[...Array(5)].map((_, i) => (
+                    <div 
+                      key={i} 
+                      className={`w-2 h-2 rounded-full mx-0.5 ${
+                        i < tech.proficiency ? tech.color : 'bg-neutral-700'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </motion.div>
           ))}
         </motion.div>
 
@@ -357,7 +358,7 @@ const TechStackVisualization: React.FC = () => {
             >
               <div className="flex items-start mb-6">
                 <div className={`text-5xl mr-4 ${selectedTech.color}`}>
-                  {selectedTech.icon}
+                  {React.createElement(selectedTech.icon)}
                 </div>
                 <div>
                   <h4 className="text-2xl font-bold text-white mb-1">{selectedTech.name}</h4>
