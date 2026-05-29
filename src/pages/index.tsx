@@ -71,7 +71,7 @@ const Home: React.FC = () => {
       setCurrentIndex((prevIndex) =>
         prevIndex === ProfilePhoto.length - 1 ? 0 : prevIndex + 1
       );
-    }, 2000); 
+    }, 15000); 
     return () => clearInterval(intervalId);
   }, []); 
 
