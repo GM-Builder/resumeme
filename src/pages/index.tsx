@@ -21,11 +21,7 @@ declare global {
 }
 
 const ProfilePhoto = [
-  '/profile/Profile (1).jpeg',
   '/profile/Profile (2).jpeg',
-  '/profile/Profile (3).jpeg',
-  '/profile/Profile (4).jpeg',
-  '/profile/Profile (5).jpeg',
   '/profile/Profile (6).jpeg',
 ]
 
