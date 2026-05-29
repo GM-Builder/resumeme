@@ -32,7 +32,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <div className="flex items-start justify-between gap-3">
             <h4 className="text-xl font-bold mb-1 text-white">{title}</h4>
             {status && (
-              <span className="text-xs py-1 px-3 bg-teal-400/10 text-teal-300 border border-teal-400/20 rounded-full whitespace-nowrap">
+              <span className={`text-xs py-1 px-3 rounded-full whitespace-nowrap border ${
+                status === 'Live'
+                  ? 'bg-green-400/10 text-green-300 border-green-400/20'
+                  : status === 'Beta'
+                    ? 'bg-yellow-400/10 text-yellow-300 border-yellow-400/20'
+                    : status === 'In Progress'
+                      ? 'bg-blue-400/10 text-blue-300 border-blue-400/20'
+                      : 'bg-teal-400/10 text-teal-300 border-teal-400/20'
+              }`}>
                 {status}
               </span>
             )}

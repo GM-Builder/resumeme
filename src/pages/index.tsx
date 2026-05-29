@@ -475,7 +475,7 @@ const Home: React.FC = () => {
                     </div>,
                     <div key="agent-framework" className="flex items-center gap-1">
                       <FaRobot className="skill-icon" />
-                      <span>Custom AI agent framework logic</span>
+                      <span>Custom Agentic Architecture</span>
                     </div>,
                     <div key="sales-workflow" className="flex items-center gap-1">
                       <FaPlug className="skill-icon" />
@@ -640,7 +640,7 @@ const Home: React.FC = () => {
                 <ProjectCard
                   title="BinaHub"
                   status="In Progress"
-                  description="An AI-powered business platform currently developing AI assistant agents, automated assessments, email-based reporting, and self-generating proposal workflows."
+                  description="An AI-driven platform for business automation featuring autonomous agents for assessment, report generation, and automated proposal creation."
                   tags={['AI Agent', 'Assessment', 'Automation']}
                 />
               </motion.div>
